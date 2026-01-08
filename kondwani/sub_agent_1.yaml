@@ -1,0 +1,6 @@
+name: sub_agent_1
+model: gemini-2.5-flash
+agent_class: ParallelAgent
+sub_agents:
+  - config_path: ./sub_agent_2.yaml
+  - config_path: ./sub_agent_3.yaml

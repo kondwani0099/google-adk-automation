@@ -1,12 +1,13 @@
 
-# google-adk-automation
 
-A Python project demonstrating single and multi-agent systems using the **Google Agent Development Kit (ADK)**. This repository includes:
+# Google ADK Automation: Multi-Agent , Multi-Model Usage  With  RAG System
+
+An advanced Python framework for building single and multi-agent systems powered by the **Google Agent Development Kit (ADK)**, featuring Retrieval-Augmented Generation (RAG) with ChromaDB and multi-model orchestration. This repository demonstrates:
 
 - **weather_agent**: A single agent that provides mock weather data for a given city.
-- **multi_agent**: A system with a coordinator, conversation, and researcher agent to handle queries with delegated tasks.
+- **multi_agent**: A robust multi-agent system with a coordinator, conversation, and researcher agent, capable of selecting the right model for each task and leveraging RAG for dynamic context retrieval.
 
-This project is ideal for learning how to build and deploy AI agents with Google ADK.
+This project is ideal for learning, prototyping, and deploying intelligent AI agents that can dynamically choose models and retrieve relevant knowledge for complex workflows using Google ADK and ChromaDB.
 
 ## Table of Contents
 
@@ -66,6 +67,7 @@ Before starting, ensure you have:
    - Ensure the Generative Language API is enabled (see [Prerequisites](#prerequisites)).
    - If you encounter a `403 PERMISSION_DENIED` error later, revisit the Google Cloud Console to confirm.
 
+
 ## Project Structure
 
 ```
@@ -85,6 +87,27 @@ google-adk-automation/
 - **weather_agent/**: Single agent for mock weather queries.
 - **multi_agent/**: Multi-agent system with a coordinator, conversation, and researcher agent.
 - **.env**: Stores API key and configuration.
+
+## RAG System with ChromaDB for Multi-Model Agents
+
+This project integrates a Retrieval-Augmented Generation (RAG) system using [ChromaDB](https://www.trychroma.com/) for efficient embedding and retrieval. The RAG system enables agents to access relevant context and knowledge dynamically, improving their responses and decision-making.
+
+### Multi-Model Use Case
+
+Agents in this system are designed to select the most suitable model for their specific needs and complexity. Each agent can:
+
+- **Embed and retrieve context** using ChromaDB, ensuring fast and accurate access to relevant information.
+- **Choose the right model** (e.g., LLM, specialized task model, or domain-specific model) based on the complexity and requirements of the task.
+- **Optimize performance** by leveraging multiple models, ensuring that simple tasks use lightweight models while complex tasks utilize more powerful or specialized models.
+
+#### Example Workflow
+
+1. **Agent receives a task** and determines the required context.
+2. **Embeddings are generated** and stored/retrieved from ChromaDB.
+3. **Agent selects the appropriate model** (from a pool of available models) based on the task's complexity and domain.
+4. **Response is generated** using the selected model, with context retrieved via RAG.
+
+This architecture allows for scalable, flexible, and intelligent agent behavior, supporting a wide range of use cases and domains.
 
 ## Running the Agents
 

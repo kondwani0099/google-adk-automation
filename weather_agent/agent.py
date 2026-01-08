@@ -14,7 +14,7 @@ def get_weather(city: str) -> dict:
 
 root_agent = Agent(
     name="weather_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description="Answers weather queries for cities.",
     instruction="Use get_weather to provide accurate weather info.",
     tools=[get_weather],

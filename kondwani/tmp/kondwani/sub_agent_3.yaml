@@ -1,0 +1,4 @@
+name: sub_agent_3
+model: gemini-2.5-flash
+agent_class: SequentialAgent
+sub_agents: []
